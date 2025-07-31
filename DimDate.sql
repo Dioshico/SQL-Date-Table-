@@ -1,4 +1,18 @@
-use DB
+/*
+===============================================================================
+DDL Script: Create Bronze Tables
+===============================================================================
+Script Purpose:
+    This script creates calendar table in the 'database' schema, dropping existing table
+    if they already exist.
+	  Run this script to re-define the DDL structure of 'calendar' Table
+===============================================================================
+*/
+
+IF OBJECT_ID('DimDate', 'U') IS NOT NULL
+    DROP TABLE DimDate;
+GO
+
 CREATE TABLE	[dbo].[DimDate]
 	(	[DateKey] INT primary key, 
 		[Date] DATETIME,
